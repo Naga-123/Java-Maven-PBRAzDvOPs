@@ -24,3 +24,15 @@ steps:
   inputs:
     Contents: '**'
     TargetFolder:
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+- task: TomcatDeployment@1
+  inputs:
+    TomcatUrl: 'http://localhost:8080'
+    Username: 'admin'
+    Password: 'admin'
+    Context: '/'
+    ServerVersion: '7OrAbove'
