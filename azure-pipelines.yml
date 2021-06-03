@@ -31,7 +31,7 @@ steps:
     publishLocation: 'Container'
 - task: TomcatDeployment@1
   inputs:
-    TomcatUrl: 'http://localhost:8080'
+    TomcatUrl: 'http://192.168.1.141:8080'
     Username: 'admin'
     Password: 'admin'
     Context: '/'
